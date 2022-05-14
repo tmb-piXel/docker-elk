@@ -33,6 +33,10 @@ services:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - type: bind
+        source: /home/pixel/projects/LearnEnglishBot/.log
+        target: /var/polyglot/.log
+        read_only: true
+      - type: bind
         source: ./logstash/config/logstash.yml
         target: /usr/share/logstash/config/logstash.yml
         read_only: true
